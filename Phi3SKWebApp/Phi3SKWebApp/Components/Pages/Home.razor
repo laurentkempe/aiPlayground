@@ -1,0 +1,69 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@inject Kernel Kernel
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, Phi-3 SLM on your machine with C# Semantic Kernel!</h1>
+
+<FluentStack  Orientation="Orientation.Vertical" Width="100%">
+    
+    <FluentStack Style="border: 1px dotted var(--accent-fill-rest); padding: 5px" Width="100%">
+        <FluentStack Orientation="Orientation.Vertical" Width="50%">
+            <div class="demopanel">
+                <FluentTextArea @bind-Value="@_question" Rows="24" Cols="120" Label="Question?"></FluentTextArea>
+            </div>
+            <div class="demopanel">
+                <FluentButton Loading="@_answering" OnClick="@AskAsync" Appearance="Appearance.Accent">Ask</FluentButton>
+            </div>
+        </FluentStack>
+        <div class="demopanel"><FluentTextArea @bind-Value="@_answer" Rows="24" Cols="120" Label="Answer"></FluentTextArea></div>
+    </FluentStack>
+    
+</FluentStack>
+
+@code {
+
+    private string _question = "";
+    private string _answer = "";
+    private bool _answering;
+    private ChatHistory _history = null!;
+    private IChatCompletionService _chatService = null!;
+
+    private IChatCompletionService? Ai { get; set; }
+    
+    private async Task AskAsync()
+    {
+        _answering = true;
+        _answer = "";
+     
+        // Add user input to the chat history
+        _history.AddUserMessage(_question);
+
+        // Get the AI response streamed back to the blazor page
+        await foreach (var message in _chatService.GetStreamingChatMessageContentsAsync(_history, kernel: Kernel))
+        {
+            _answer += message.Content;
+            StateHasChanged();
+        }
+
+        // Add the message from the assistant to the chat history
+        _history.AddAssistantMessage(_answer);
+
+        _answering = false;
+    }
+    
+    [MemberNotNull(nameof(_chatService), nameof(_history))]
+    protected override void OnInitialized()
+    {
+        // Get chat completion service
+        _chatService = Kernel.GetRequiredService<IChatCompletionService>();
+
+        // Create chat history
+        _history = new ChatHistory();
+
+        _question = "Can you code in C#?";
+        
+        base.OnInitialized();
+    }
+}
