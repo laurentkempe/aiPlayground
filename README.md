@@ -4,6 +4,7 @@ Some experiments around AI to learn.
 
 ## Projects
 
+- [OllamaToolConsoleApp](https://github.com/laurentkempe/aiPlayground/tree/main/OllamaToolConsoleApp) a discovery project to learn how AI tool/function calling are working.
 - [Phi3SKConsoleApp](https://github.com/laurentkempe/aiPlayground/tree/main/Phi3SKConsoleApp) a console application that interacts with Phi-3 on your machine using Ollama, C# and Semantic Kernel.
 - [Phi3SKWebApp](https://github.com/laurentkempe/aiPlayground/tree/main/Phi3SKWebApp) A blazor web application leveraging Fluent UI Blazor components library that interacts with Phi-3 on your machine using Ollama, C# and Semantic Kernel. It demonstrates the streaming of chat completion from Phi-3 to the web application in real-time.
 
