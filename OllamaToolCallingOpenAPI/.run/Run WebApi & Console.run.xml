@@ -1,0 +1,7 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run WebApi &amp; Console" type="CompoundRunConfigurationType">
+    <toRun name="WebApi: http" type="LaunchSettings" />
+    <toRun name="Console" type="DotNetProject" />
+    <method v="2" />
+  </configuration>
+</component>
