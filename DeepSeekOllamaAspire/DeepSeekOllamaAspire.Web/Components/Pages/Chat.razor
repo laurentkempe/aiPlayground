@@ -1,0 +1,30 @@
+﻿@page "/chat"
+@attribute [StreamRendering(true)]
+@attribute [OutputCache(Duration = 5)]
+
+@inject ChatApiClient ChatApi
+
+<PageTitle>Chat</PageTitle>
+
+<h1>Chat</h1>
+
+<p>This component demonstrates showing data loaded from a backend API service talking to Ollama.</p>
+
+@if (_response == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p>@_response</p>
+}
+
+@code {
+    private string? _response;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var question = Uri.EscapeDataString("Hello, can you help me in C#?");
+        _response = await ChatApi.ChatAsync(question);
+    }
+}
