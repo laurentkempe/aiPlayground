@@ -11,9 +11,9 @@
 
     <ItemGroup>
         <!--👇🏼 Semantic Kernel packages needed for the application-->
-        <PackageReference Include="Microsoft.SemanticKernel.Connectors.Ollama" Version="1.30.0-alpha"/>
-        <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.30.0"/>
-        <PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" Version="1.30.0-preview"/>
+        <PackageReference Include="Microsoft.SemanticKernel.Connectors.Ollama" Version="1.35.0-alpha" />
+        <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.35.0" />
+        <PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" Version="1.35.0-preview" />
     </ItemGroup>
 
 </Project>

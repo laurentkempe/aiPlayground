@@ -8,7 +8,11 @@ var kernel = builder.Build();
 await kernel.ImportPluginFromOpenApiAsync(
     pluginName: "weatherforecast",
     // 👇🏼 URI pointing to the WebApi project OpenAPI document
-    uri: new Uri("http://localhost:5118/openapi/v1.json")
+    uri: new Uri("http://localhost:5118/openapi/v1.json"),
+    executionParameters: new OpenApiFunctionExecutionParameters()
+    {
+        EnablePayloadNamespacing = true
+    }
 );
 
 var chatService = kernel.GetRequiredService<IChatCompletionService>();
@@ -18,7 +22,11 @@ var settings = new OllamaPromptExecutionSettings
     FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
 };
 
-ChatHistory chat = new("You are an AI assistant that helps people find information.");
+ChatHistory chat = new("""
+                       You are an AI assistant that helps people find information about weather using tool calling.
+                       You reply with a short message. If you cannot call the tool to get the information,
+                       you should reply with a message that explains why you cannot.
+                       """);
 StringBuilder responseBuilder = new();
 
 while (true)
