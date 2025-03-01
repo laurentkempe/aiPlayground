@@ -4,6 +4,7 @@ Some experiments around AI to learn.
 
 ## Projects
 
+- [SKOllamaAgentWithFunction](https://github.com/laurentkempe/aiPlayground/tree/main/SKOllamaAgentWithFunction) demonstrates the way to create a Semantic Kernel Agent with function in C# using Ollama to run local SLM model like llama3.2.
 - [SKOllamaAgent](https://github.com/laurentkempe/aiPlayground/tree/main/SKOllamaAgent) demonstrates the way to create a Semantic Kernel Agent in C# using Ollama to run local SLM model like phi4.
 - [DeepSeekOllamaAspire](https://github.com/laurentkempe/aiPlayground/tree/main/DeepSeekOllamaAspire) explore how to run DeepSeek-R1 distilled model by harnessing the capabilities of .NET Aspire alongside Ollama on your local environment.
 - [OllamaToolCallingMicrosoftExtensions](https://github.com/laurentkempe/aiPlayground/tree/main/OllamaToolCallingMicrosoftExtensions) a discovery project to learn how AI tool/function calling are working using Microsoft.Extensions.AI. Follows my own implementation [OllamaToolConsoleApp](https://github.com/laurentkempe/aiPlayground/tree/main/OllamaToolConsoleApp).
