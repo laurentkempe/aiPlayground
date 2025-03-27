@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- 👇🏼 Enable SDK container support -->
+    <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
+    <!-- 👇🏼 Define the container image name created -->
+    <ContainerRepository>laurentkempe/mcpserverdocker</ContainerRepository>
+    <!-- 👇🏼 Define the container base image used to build our Docker image -->
+    <ContainerBaseImage>mcr.microsoft.com/dotnet/runtime:9.0-alpine</ContainerBaseImage>
+    <!-- 👇🏼 Targeting Linux as the OS and an x64 architecture -->
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.3" />
+    <PackageReference Include="ModelContextProtocol" Version="0.1.0-preview.1.25171.12" />
+  </ItemGroup>
+
+</Project>
+
