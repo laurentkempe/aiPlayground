@@ -4,6 +4,7 @@ Some experiments around AI to learn.
 
 ## Projects
 
+-[MCPServerDocker](https://github.com/laurentkempe/aiPlayground/tree/main/MCPServerDocker) Two simple console applications using `modelcontextprotocol / csharp-sdk`, one .NET C# MCP Server and its client, and a way to publish the server as a Docker image.
 - [MCPServer](https://github.com/laurentkempe/aiPlayground/tree/main/MCPServer) Two simple console applications using modelcontextprotocol / csharp-sdk, Microsoft.Extensions.AI with Ollama & tools to build a Model Context Protocol (MCP) server and client!
 - [OllamaMCPServerMicrosoftExtensions](https://github.com/laurentkempe/aiPlayground/tree/main/OllamaMCPServerMicrosoftExtensions) simple console application using Microsoft.Extensions.AI with Ollama & tools from a Model Context Protocol (MCP) server!
 - [SKOllamaAgentWithFunction](https://github.com/laurentkempe/aiPlayground/tree/main/SKOllamaAgentWithFunction) demonstrates the way to create a Semantic Kernel Agent with function in C# using Ollama to run local SLM model like llama3.2.
