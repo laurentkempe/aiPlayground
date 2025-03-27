@@ -1,4 +1,4 @@
-﻿# MCPServer
+﻿# MCPServerDocker
 
 Two simple console applications using `modelcontextprotocol / csharp-sdk`, `Microsoft.Extensions.AI` with Ollama & tools to build a Model Context Protocol (MCP) server and client!
 
