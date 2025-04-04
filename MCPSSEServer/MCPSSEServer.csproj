@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- 👇🏼 Enables Native AOT compilation during publish-->
+    <PublishAot>true</PublishAot>
+    <!-- 👇🏼 Favor the size of the executable instead of other performance -->
+    <OptimizationPreference>Size</OptimizationPreference>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="ModelContextProtocol.AspNetCore" Version="0.1.0-preview.6" />
+  </ItemGroup>
+
+</Project>
